@@ -12,17 +12,17 @@ import java.util.List;
 public class ManagerController {
 
     @Autowired
-    ManagerRepository studentRepository;
+    ManagerRepository managerRepository;
 
     @PostMapping
-    public String create(@RequestBody Manager student) {
-        studentRepository.save(student);
+    public String create(@RequestBody Manager manager) {
+        managerRepository.save(manager);
         return "Manager is created";
     }
 
     @GetMapping
     public List<Manager> getAllManagers() {
-        List<Manager> students = studentRepository.findAll();
-        return students;
+        List<Manager> manager = managerRepository.findAll();
+        return manager;
     }
 }
